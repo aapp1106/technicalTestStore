@@ -6,12 +6,21 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceService {
 
-  url: string = "https://localhost:44304/"
+  url: string = "http://localhost:44304/"
 
   constructor(public req: HttpClient) {}
 
   public GetClients(){
     return  this.req.get(this.url+"api/Client");
   }
+
+  public AddClient(client : any){
+    return  this.req.post(this.url+"api/Client", client);
+  }
   
+  public UpdateClient(id:number, client : any){
+    debugger;
+    
+    return  this.req.put(this.url+"api/Client/"+id, client);
+  }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using DataAccess;
 
 namespace WebApiStore.Controllers
@@ -17,7 +18,11 @@ namespace WebApiStore.Controllers
         /// listar todos los registros
         /// </summary>
         /// <returns>List<client></returns>
+        /// 
+        
+
         [HttpGet]
+
         public IEnumerable<client> Get()
         {
             List<client> c = new List<client>();

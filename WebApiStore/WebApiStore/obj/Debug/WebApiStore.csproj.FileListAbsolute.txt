@@ -100,3 +100,6 @@ C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\WebApiS
 C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\WebApiStore\obj\Debug\WebApiStore.pdb
 C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\WebApiStore\bin\EntityFramework.SqlServer.dll
 C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\WebApiStore\bin\EntityFramework.SqlServer.xml
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\WebApiStore\bin\System.Web.Cors.dll
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\WebApiStore\bin\System.Web.Http.Cors.dll
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\WebApiStore\bin\System.Web.Http.Cors.xml

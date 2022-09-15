@@ -266,3 +266,9 @@ back-color{
     padding-bottom: 0% + $i !important;
   }
 }
+
+.hoverable:hover {
+  cursor: pointer;
+  background-color:rgba(223, 223, 223, 0.3);
+  transform: scale(1.01);
+}

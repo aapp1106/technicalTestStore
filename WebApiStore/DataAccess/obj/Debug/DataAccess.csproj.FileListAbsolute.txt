@@ -1,0 +1,12 @@
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\aapp1\OneDrive\Documentos\GitHub\technicalTestStore\WebApiStore\DataAccess\obj\Debug\DataAccess.pdb

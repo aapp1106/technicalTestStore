@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="storeModelStoreContainer" CdmEntityContainer="storeEntities">
+    <EntitySetMapping Name="client">
+      <EntityTypeMapping TypeName="storeModel.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="clientNit" ColumnName="clientNit" />
+          <ScalarProperty Name="clientName" ColumnName="clientName" />
+          <ScalarProperty Name="clientLastName" ColumnName="clientLastName" />
+          <ScalarProperty Name="clientPhone" ColumnName="clientPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="storeModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productValue" ColumnName="productValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sale">
+      <EntityTypeMapping TypeName="storeModel.sale">
+        <MappingFragment StoreEntitySet="sale">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="productIAmount" ColumnName="productIAmount" />
+          <ScalarProperty Name="productUnitValue" ColumnName="productUnitValue" />
+          <ScalarProperty Name="productTotalValue" ColumnName="productTotalValue" />
+          <ScalarProperty Name="clientId" ColumnName="clientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

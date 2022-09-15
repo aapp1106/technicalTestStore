@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container h-p-100" >
+    <mat-drawer mode="side" opened>
+        <div class="row">
+            <button mat-button [routerLink]="['/clients']">Clientes</button>
+        </div>
+        <div class="row">
+            <button mat-button >Productos</button>
+        </div>
+        <div class="row">
+            <button mat-button >Venta</button>
+        </div>
+        
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

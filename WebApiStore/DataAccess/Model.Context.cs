@@ -16,8 +16,10 @@ namespace DataAccess
     public partial class storeEntities : DbContext
     {
         public storeEntities()
-            : base("name=storeEntities")
+            : base("storeEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="clientNit" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="clientName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="clientLastName" Type="varchar" MaxLength="50" Nullable="false" />
@@ -14,7 +14,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="productName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="productValue" Type="money" Nullable="false" />
   </EntityType>
@@ -22,7 +22,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="productId" Type="int" Nullable="false" />
     <Property Name="productIAmount" Type="int" Nullable="false" />
     <Property Name="productUnitValue" Type="money" Nullable="false" />

@@ -6,65 +6,59 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using DataAccess;
+using Newtonsoft.Json;
 
 namespace WebApiStore.Controllers
 {
-    public class ClientController : ApiController
+    public class ProductController : ApiController
     {
         private storeEntities Context = new storeEntities();
 
         /// <summary>
         /// listar todos los registros
         /// </summary>
-        /// <returns>List<client></returns>
+        /// <returns>List<product></returns>
         [HttpGet]
-        public IEnumerable<client> Get()
+        public IEnumerable<product> Get()
         {
-            List<client> c = new List<client>();
-            try
+            List<product> l = new List<product>();
+
+            using (storeEntities db = new storeEntities())
             {
-                
-                using (storeEntities db = new storeEntities())
-                {
-                    c = db.client.ToList();
-                }
+                l = db.product.ToList();
             }
-            catch (Exception)
-            {
-                c = null;
-            }
-            return c;
+            return l;//Json(l, JsonRequestBehavior.AllowGet); 
         }
 
         /// <summary>
         /// filtro por id
         /// </summary>
-        /// <returns>client</returns>
+        /// <returns>product</returns>
         [HttpGet]
-        public client Get(int id)
+        public product Get(int id)
         {
-            client l = new client();
+            product l = new product();
 
             using (storeEntities db = new storeEntities())
             {
-                l = db.client.FirstOrDefault(c => c.id == id);
+                l = db.product.FirstOrDefault(c => c.id == id);
             }
             return l;
         }
 
         /// <summary>
-        /// guardar cliente
+        /// guardar producto
         /// </summary>
-        /// <param name="client"></param>
+        /// <param name="product"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult AddClient([FromBody] client client)
+        public IHttpActionResult AddProduct([FromBody] product product)
         {
             if (ModelState.IsValid)
             {
-                Context.client.Add(client);
+                Context.product.Add(product);
                 Context.SaveChanges();
-                return Ok(client);
+                return Ok(product);
             }
             else
             {
@@ -73,22 +67,22 @@ namespace WebApiStore.Controllers
         }
 
         /// <summary>
-        /// actualizar cliente
+        /// actualizar producto
         /// </summary>
-        /// <param name="client"></param>
+        /// <param name="product"></param>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
-        public IHttpActionResult UpdateClient(int id, [FromBody] client client)
+        public IHttpActionResult UpdateProduct(int id, [FromBody] product product)
         {
             if (ModelState.IsValid)
             {
-                var exist = Context.client.Count(c => c.id == id) > 0; 
-                if(exist)
+                var exist = Context.product.Count(c => c.id == id) > 0;
+                if (exist)
                 {
-                    Context.Entry(client).State = EntityState.Modified;
+                    Context.Entry(product).State = EntityState.Modified;
                     Context.SaveChanges();
-                    return Ok(client);
+                    return Ok(product);
                 }
                 else
                 {

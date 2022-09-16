@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ServiceService } from '../../services/service.service';
+import { DialogAgreeComponent } from '../../shared/components/dialog-agree/dialog-agree.component';
 
 @Component({
   selector: 'app-clients',
@@ -53,6 +54,7 @@ export class ClientsComponent implements OnInit {
         'clientPhone': this.formulario.value.clientPhone,
       };
       this.Service.AddClient(data).subscribe((respuesta)=>{
+        this.openDialog("Se creo correctamente el cliente");
         this.Clients();
       },(error)=>{
         console.log(error);
@@ -66,6 +68,7 @@ export class ClientsComponent implements OnInit {
         'clientPhone': this.formulario.value.clientPhone,
       };
       this.Service.UpdateClient(this.client.id, data).subscribe((respuesta)=>{
+        this.openDialog("Se actualizo correctamente el cliente");
         this.Clients();
       },(error)=>{
         console.log(error);
@@ -82,6 +85,19 @@ export class ClientsComponent implements OnInit {
       clientPhone: element.clientPhone || null,
       clientNit: element.clientNit
     }); 
+  }
+
+  openDialog(subTitle: string = "") {
+    let object = {
+      data: {
+        subTitle
+      }
+    }
+    const dialogRef = this.dialog.open(DialogAgreeComponent, object);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   clear(){

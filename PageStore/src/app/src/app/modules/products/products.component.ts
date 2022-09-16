@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ServiceService } from '../../services/service.service';
+import { DialogAgreeComponent } from '../../shared/components/dialog-agree/dialog-agree.component';
 
 @Component({
   selector: 'app-products',
@@ -49,6 +50,7 @@ export class ProductsComponent implements OnInit {
         'productName':this.formulario.value.productName
       };
       this.Service.AddProduct(data).subscribe((respuesta)=>{
+        this.openDialog("Se creo correctamente el producto");
         this.Products();
       },(error)=>{
         console.log(error);
@@ -60,6 +62,7 @@ export class ProductsComponent implements OnInit {
         'productName':this.formulario.value.productName
       };
       this.Service.UpdateProduct(this.product.id, data).subscribe((respuesta)=>{
+        this.openDialog("Se actualizo correctamente el producto");
         this.Products();
       },(error)=>{
         console.log(error);
@@ -74,6 +77,19 @@ export class ProductsComponent implements OnInit {
       productName: element.productName, 
       productValue: element.productValue
     }); 
+  }
+
+  openDialog(subTitle: string = "") {
+    let object = {
+      data: {
+        subTitle
+      }
+    }
+    const dialogRef = this.dialog.open(DialogAgreeComponent, object);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   clear(){

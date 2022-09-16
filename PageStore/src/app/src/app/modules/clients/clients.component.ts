@@ -27,7 +27,6 @@ export class ClientsComponent implements OnInit {
   clients: any
   async Clients(){
     await this.Service.GetClients().subscribe((respuesta)=>{
-      console.log(respuesta);
       this.clients = respuesta;
       this.dataSource = new MatTableDataSource(this.clients);
     },(error)=>{
@@ -54,7 +53,6 @@ export class ClientsComponent implements OnInit {
         'clientPhone': this.formulario.value.clientPhone,
       };
       this.Service.AddClient(data).subscribe((respuesta)=>{
-        console.log("registrado "+respuesta);
         this.Clients();
       },(error)=>{
         console.log(error);
@@ -68,7 +66,6 @@ export class ClientsComponent implements OnInit {
         'clientPhone': this.formulario.value.clientPhone,
       };
       this.Service.UpdateClient(this.client.id, data).subscribe((respuesta)=>{
-        console.log("registrado "+respuesta);
         this.Clients();
       },(error)=>{
         console.log(error);

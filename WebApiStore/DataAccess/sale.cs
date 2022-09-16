@@ -16,12 +16,14 @@ namespace DataAccess
     {
         public int id { get; set; }
         public int productId { get; set; }
+        public string productName { get; set; }
         public int productIAmount { get; set; }
         public decimal productUnitValue { get; set; }
         public decimal productTotalValue { get; set; }
         public int clientId { get; set; }
-    
-        public virtual client client { get; set; }
-        public virtual product product { get; set; }
+        public string clientName { get; set; }
+
+        public client client { get; set; }
+        public product product { get; set; }
     }
 }

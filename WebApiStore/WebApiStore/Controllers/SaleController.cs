@@ -21,10 +21,14 @@ namespace WebApiStore.Controllers
         public IEnumerable<sale> Get()
         {
             List<sale> l = new List<sale>();
-
             using (storeEntities db = new storeEntities())
             {
                 l = db.sale.ToList();
+                foreach (var item in l)
+                {
+                    item.productName = Context.product.FirstOrDefault(p => p.id == item.productId).productName;
+                    item.clientName = Context.client.FirstOrDefault(c => c.id == item.clientId).clientName;
+                }
             }
             return l;
         }

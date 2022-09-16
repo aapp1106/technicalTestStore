@@ -33,4 +33,16 @@ export class ServiceService {
   public UpdateProduct(id:number, product : any){
     return this.req.put(this.url+"Product/"+id, product);
   }
+
+  public GetSale(){
+    return this.req.get(this.url+"Sale");
+  }
+
+  public AddSale(sale : any){
+    return this.req.post(this.url+"Sale", sale);
+  }
+  
+  public UpdateSale(id:number, sale : any){
+    return this.req.put(this.url+"Sale/"+id, sale);
+  }
 }

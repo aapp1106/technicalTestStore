@@ -1,2 +1,102 @@
-<mat-card-title class="col-xs-12 text-30">Ventas</mat-card-title>
+<div class="row margin-10">
+    <mat-card-title class="col-xs-12 text-30">Ventas</mat-card-title>
+    <form [formGroup]="formulario" (ngSubmit)="save()" (keyup.enter)="save()" class="col-xs-12">
 
+        <div class="row margin-0  center-xs">
+
+            <div class="col-xs-12 center-xs padding-bottom-10">
+            </div>
+            <div class="row margin-0 col-md-8 ">
+
+                <div class="row margin-0 col-xs-12 col-sm-6">
+                    <mat-form-field appearance="outline" class="col-xs-12">
+                        <mat-label>Cliente</mat-label>
+                        <mat-select formControlName="clientName">
+                            <mat-option *ngFor="let item of clients" [value]="item.id">
+                                {{item.clientName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="row margin-0 col-xs-12 col-sm-6">
+                    <mat-form-field appearance="outline" class="col-xs-12">
+                        <mat-label>Producto</mat-label>
+                        <mat-select formControlName="productName">
+                            <mat-option *ngFor="let item of products" [value]="item.id">
+                                {{item.productName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="row margin-0 col-xs-12 col-sm-6">
+                    <mat-form-field appearance="outline" class="col-xs-12">
+                        <mat-label>Valor Unitario</mat-label>
+                        <input matInput [disabled]="true" id="productUnitValue" formControlName="productUnitValue" type="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="row margin-0 col-xs-12 col-sm-6">
+                    <mat-form-field appearance="outline" class="col-xs-12">
+                        <mat-label>Cantidad</mat-label>
+                        <input matInput id="productIAmount" formControlName="productIAmount" type="number">
+                    </mat-form-field>
+                </div>
+
+                <div class="row margin-0 col-xs-12 col-sm-6">
+                    <mat-form-field appearance="outline" class="col-xs-12">
+                        <mat-label>Valor total compra</mat-label>
+                        <input matInput id="productTotalValue" formControlName="productTotalValue" type="text">
+                    </mat-form-field>
+                </div>
+
+                <div class="row margin-0 col-xs-12 padding-vertical-16">
+                    <div class="row col-xs-12 col-sm center-xs">
+                        <div class="col-xs-12 col-sm-6">
+                            <button mat-button color="warn" (click)="clear()">Limpiar</button>
+                            <button mat-button color="primary" type="submit" (ngSubmit)="save()">{{ operation ?
+                                'Guardar' : 'Actualizar' }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="max-width start-xs ion-padding col-xs margin-top-30 col-xs-12">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="clientName">
+                <th mat-header-cell *matHeaderCellDef> Nombre cliente </th>
+                <td mat-cell *matCellDef="let element" (click)="chargeInfo(element)"> {{element.clientName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="productName">
+                <th mat-header-cell *matHeaderCellDef> Nombre producto </th>
+                <td mat-cell *matCellDef="let element" (click)="chargeInfo(element)"> {{element.productName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="productIAmount">
+                <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+                <td mat-cell *matCellDef="let element" (click)="chargeInfo(element)"> {{element.productIAmount}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="productUnitValue">
+                <th mat-header-cell *matHeaderCellDef> Valor Producto </th>
+                <td mat-cell *matCellDef="let element" (click)="chargeInfo(element)"> {{element.productUnitValue |
+                    currency}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="productTotalValue">
+                <th mat-header-cell *matHeaderCellDef> Valor Total Compra </th>
+                <td mat-cell *matCellDef="let element" (click)="chargeInfo(element)"> {{element.productTotalValue |
+                    currency}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="hoverable"></tr>
+        </table>
+    </div>
+
+</div>

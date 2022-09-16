@@ -1,0 +1,13 @@
+<div class="row padding-16">
+    <h2>
+        <b>
+            {{ data?.title || "Hecho"}}
+        </b>
+    </h2>
+</div>
+<div class="row padding-16">
+    {{ data?.subTitle || "Operacion realizada correctamente" }}
+</div>
+<div class="row end-xs padding-16" >
+    <button mat-raised-button color="warn" (click)="close()">Cerrar</button>
+</div>

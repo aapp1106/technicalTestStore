@@ -6,10 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './src/app/shared/modules/material.module';
 import { ServiceService } from './src/app/services/service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogAgreeComponent } from './src/app/shared/components/dialog-agree/dialog-agree.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogAgreeComponent
   ],
   imports: [
     BrowserModule,

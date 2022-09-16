@@ -27,7 +27,6 @@ export class ProductsComponent implements OnInit {
   clients: any
   async Products(){
     await this.Service.GetProduct().subscribe((respuesta)=>{
-      console.log(respuesta);
       this.clients = respuesta;
       this.dataSource = new MatTableDataSource(this.clients);
     },(error)=>{
@@ -50,7 +49,6 @@ export class ProductsComponent implements OnInit {
         'productName':this.formulario.value.productName
       };
       this.Service.AddProduct(data).subscribe((respuesta)=>{
-        console.log("registrado "+respuesta);
         this.Products();
       },(error)=>{
         console.log(error);
@@ -62,7 +60,6 @@ export class ProductsComponent implements OnInit {
         'productName':this.formulario.value.productName
       };
       this.Service.UpdateProduct(this.product.id, data).subscribe((respuesta)=>{
-        console.log("registrado "+respuesta);
         this.Products();
       },(error)=>{
         console.log(error);

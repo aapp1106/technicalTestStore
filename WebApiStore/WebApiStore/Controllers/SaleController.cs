@@ -60,7 +60,7 @@ namespace WebApiStore.Controllers
             if (ModelState.IsValid)
             {
                 ProductController p = new ProductController();
-                product pro = p.Get(sale.id);
+                product pro = p.Get(sale.productId);
                 sale.productUnitValue = pro.productValue;
                 sale.productTotalValue = pro.productValue * sale.productIAmount;
                 Context.sale.Add(sale);
@@ -88,7 +88,7 @@ namespace WebApiStore.Controllers
                 if (exist)
                 {
                     ProductController p = new ProductController();
-                    product pro = p.Get(sale.id);
+                    product pro = p.Get(sale.productId);
                     sale.productUnitValue = pro.productValue;
                     sale.productTotalValue = pro.productValue * sale.productIAmount;
                     Context.Entry(sale).State = EntityState.Modified;
